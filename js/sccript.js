@@ -14,15 +14,16 @@ function isEmpty() {
 
 nameInput.addEventListener('keyup', isEmpty);
 
-myButton.addEventListener('click', () => {
+function add() {
     let newItem = document.createElement('li');
-    newItem.classList.add('item');
     newItem.textContent = nameInput.value;
+    list.appendChild(newItem);
+    newItem.classList.add('item');
 
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'x';
+    newItem.append(deleteButton);
     deleteButton.classList.add('delBtn');
-
+    deleteButton.textContent = 'x';
     deleteButton.addEventListener('click', () => {
         list.removeChild(newItem);
     });
@@ -33,4 +34,18 @@ myButton.addEventListener('click', () => {
     nameInput.value = '';
 
     isEmpty();
+    
+    newItem.addEventListener('click', () => {
+        newItem.classList.toggle('done');
+        
+    });
+};
+
+nameInput.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        add();
+    }
 });
+
+myButton.addEventListener('click', add);
+
