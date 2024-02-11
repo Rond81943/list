@@ -11,16 +11,32 @@
         <div class="title">
             <b>Мой список дел</b>
             <div class="inp">
-                <input type="text" placeholder="Что сделать..." id="input">
-                <button id="btn">Добавить</button>
-            </div>
-            
-        </div>
+                <input type="text" placeholder="Что сделать..." id="input" class="input">
+                <button id="btn" class="btn">Добавить</button>
+    
+                <input type="text" placeholder="Найти..." id="searchInput" class="input">
+                <button id="searchBtn" class="btn">Поиск</button>
 
-        <ul class="list" id="list">
-            
-        </ul>
+                <button id="clear" class="btn">Очистить список</button>
+            </div>
+        </div>
+    
+        <ul class="list" id="list"></ul>
     </div>
+    
+
+
+    <div class="modal modal1">
+        <div class="modal__main">
+            <div class="modal__title">Вы точно хотите очистить список?<div>
+            <div class="modal__container">
+                <button id="ok" class="btn__modal">Очистить</button>
+                <button id="esc" class="btn__modal">Отмена</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/sccript.js"></script>
-</body>
+
+    </body>
 </html>
